@@ -15,4 +15,4 @@ Launching PostgreSQL
 
 #### Quick Start
 
-    # docker run --name pgdata docker-postgresql-data
+    # docker run --name pgdata blackcobra1973/docker-postgresql-data
