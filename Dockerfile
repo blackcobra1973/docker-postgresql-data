@@ -46,6 +46,11 @@ RUN sh /usr/pgsql-9.5/bin/postgresql95-setup initdb
 ADD ./container-files/etc/postgresql/postgresql.conf /var/lib/pgsql/9.5/data/postgresql.conf
 ADD ./container-files/etc/postgresql/pg_hba.conf /var/lib/pgsql/9.5/data/pg_hba.conf
 
+RUN chmod 0600 /var/lib/pgsql/9.5/data/postgresql.conf
+RUN chmod 0600 /var/lib/pgsql/9.5/data/pg_hba.conf
+
+RUN chown postgres.postgres /var/lib/pgsql/9.5/data/postgresql.conf /var/lib/pgsql/9.5/data/pg_hba.conf
+
 # Add Zabbix related files
 #RUN mkdir -p /usr/local/tmp/zabbix_sql
 #ADD ./container-files/sql/* /usr/local/tmp/zabbix_sql/
